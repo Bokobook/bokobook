@@ -1,0 +1,11 @@
+<view>
+  <block>· 专业书籍更容易被卖出
+· 平台只收七成新及以上的书，拒绝接收有影响阅读的破损、污渍、老化及异味的书籍。
+· 一本书的最终可得利润约为原价的59.2%—79.2%，书籍卖出后后台自动向您汇款；若三个月仍未售卖，书籍信息下架，您可选择随时取回或我们帮您统一处理（选择统一处理无可获收益）。
+</block>
+  <form name='book' bindsubmit='uploadBook'>
+    书名<input type='text' placeholder='book name' name='bookName' />
+    介绍<input type='text' placeholder='introduction' name='bookIntro' />
+    <button formType='submit'>send</button>
+  </form>
+</view>
