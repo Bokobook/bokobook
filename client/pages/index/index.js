@@ -10,6 +10,12 @@ Page({
         takeSession: false,
         requestResult: ''
     },
+    // to books
+    seebooks: function() {
+      wx.navigateTo({
+        url: '../books/books',
+      })
+    },
 
     // 用户登录示例
     login: function() {

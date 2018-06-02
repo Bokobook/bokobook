@@ -1,5 +1,9 @@
 {
   "pages":[
+    "pages/login/login",
+    "pages/components/book/book",
+    "pages/homepage/homepage",
+    "pages/bookdetail/bookdetail",
     "pages/sell/sell",
     "pages/index/index",
     "pages/addCgi/addCgi"

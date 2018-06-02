@@ -3,10 +3,10 @@ const CONF = {
     rootPathname: '',
 
     // 微信小程序 App ID
-    appId: '',
+    appId: 'wxf4508946d107fc1c',
 
     // 微信小程序 App Secret
-    appSecret: '',
+    appSecret: '5228ac0f924a1b936fefc555c49bc08d',
 
     // 是否使用腾讯云代理登录小程序
     useQcloudLogin: true,
@@ -21,8 +21,12 @@ const CONF = {
         port: 3306,
         user: 'root',
         db: 'cAuth',
-        pass: 'wxf4508946d107fc1c',
+        pass: 'bokobook1',
         char: 'utf8mb4'
+        // client: 'sqlite3',
+        // connection: {
+        //   filename: "./mydb.sqlite"
+        // }
     },
 
     cos: {

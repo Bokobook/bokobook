@@ -36,4 +36,8 @@
             <text>快速增加 CGI</text>
         </navigator>
     </view>
+
+    <view>
+      <button bindtap="seebooks">see books</button>
+    </view>
 </view>

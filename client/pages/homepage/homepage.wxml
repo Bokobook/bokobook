@@ -1,0 +1,10 @@
+<!--pages/homepage/homepage.wxml-->
+<view>
+  <view bindtap='tobookdetail'>
+    <book></book>
+  </view>
+  <navigator url='../sell/sell'>
+    <button bindtap="tosell">卖书</button>
+    <button>个人中心</button>
+  </navigator>
+</view>
