@@ -1,4 +1,5 @@
 var config = require('../../config')
+var app = getApp()
 
 Page({
 
@@ -6,31 +7,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    bookhelp: false
   },
   ret: function() {
     wx.navigateTo({
       url: '../index/index',
     })
   },
-  uploadBook: function(e) {
+  changebookhelp: function(e) {
+    this.setData({
+      bookhelp: e.detail.value
+    })
+  },
+  uploadOrder: function(e) {
     let value = e.detail.value
-    let bookname = value.bookName
-    let introduction = value.bookIntro
-
-    console.log('upload: ' + bookname + ' ' + introduction)
+    let bookhelp = this.data.bookhelp
+    let openid = app.globalData.userInfo.openid
+    console.log(value)
+    let orderInfo = Object.assign({}, value, {
+      userid: openid,
+      createTime: '2018-01-11',
+      way: bookhelp
+    })
     wx.request({
-      url: config.service.uploadBookUrl,
+      url: config.service.sendBookOrder,
       method: 'POST',
       header: {
         'content-type': 'application/json'
       },
-      data: {
-        bookname: bookname,
-        introduction: introduction
-      },
+      data: orderInfo,
       success: function(res) {
-        console.log('uplaod book')
+        console.log('uplaod book order')
         console.log(res)
       }
     })

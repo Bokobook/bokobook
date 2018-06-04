@@ -1,0 +1,6 @@
+<!--pages/admin/home/home.wxml-->
+<view>
+<button bindtap='uploadbook'>上传书籍信息</button>
+<button bindtap='uploadbook'>确认取书订单</button>
+<button bindtap='uploadbook'>确认买书订单</button>
+</view>

@@ -23,10 +23,6 @@ const CONF = {
         db: 'cAuth',
         pass: 'bokobook1',
         char: 'utf8mb4'
-        // client: 'sqlite3',
-        // connection: {
-        //   filename: "./mydb.sqlite"
-        // }
     },
 
     cos: {

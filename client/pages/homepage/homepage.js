@@ -1,28 +1,75 @@
 // pages/homepage/homepage.js
+
+var config = require('../../config')
+var app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    books: null
   },
   tosell: function() {
     wx.navigateTo({
       url: '../sell/sell',
     })
   },
-  tobookdetail: function() {
+  tobookdetail: function(event) {
+    let id = event.currentTarget.dataset.bookid
+    // console.log('id:' + id)
     wx.navigateTo({
-      url: '../bookdetail/bookdetail',
+      url: '../bookdetail/bookdetail?id=' + id,
+    })
+  },
+  tocenter: function() {
+    wx.navigateTo({
+      url: '../personCenter/personCenter',
+    })
+  },
+  login: function() {
+    var page = this
+    wx.login({
+      success: function(res) {
+        var code = res.code
+        console.log(code)
+        var appid = 'wxf4508946d107fc1c'
+        var secret = '5228ac0f924a1b936fefc555c49bc08d'
+        wx.request({
+          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appid + '&secret=' + secret + '&js_code=' + code + '&grant_type=authorization_code',
+          data: {},
+          header: {
+            'content-type': 'json'
+          },
+          success: function(res) {
+            var openid = res.data.openid //返回openid
+            console.log('openid为' + openid);
+            app.globalData.userInfo = res.data;
+            console.log(app.globalData.userInfo)
+          }
+        })
+      }
     })
   },
 
+  getbooks: function() {
+    let page = this
+    wx.request({
+      url: config.service.getBookUrl,
+      success: function(res) {
+        page.setData({
+          books: res.data.data.book
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.login()
+    this.getbooks()
   },
 
   /**

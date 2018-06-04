@@ -6,13 +6,18 @@
     "pages/bookdetail/bookdetail",
     "pages/sell/sell",
     "pages/index/index",
-    "pages/addCgi/addCgi"
+    "pages/addCgi/addCgi",
+    "pages/personCenter/personCenter",
+
+    "pages/admin/login/login",
+    "pages/admin/home/home",
+    "pages/admin/upload/upload"
   ],
   "window":{
     "backgroundColor":"#F6F6F6",
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "Wafer Quick Start",
+    "navigationBarTitleText": "boko",
     "navigationBarTextStyle":"black"
   }
 }

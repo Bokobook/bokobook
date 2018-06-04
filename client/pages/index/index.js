@@ -33,6 +33,7 @@ Page({
                         userInfo: result,
                         logged: true
                     })
+                    console.log(that.userInfo)
                 } else {
                     // 如果不是首次登录，不会返回用户信息，请求用户信息接口获取
                     qcloud.request({
@@ -44,6 +45,7 @@ Page({
                                 userInfo: result.data.data,
                                 logged: true
                             })
+                            console.log(that.userInfo)
                         },
 
                         fail(error) {
@@ -65,6 +67,7 @@ Page({
       if (this.data.logged) return;
 
       util.showBusy('正在登录');
+      console.log('bindGetUserInfo');
 
       var that = this;
       var userInfo = e.detail.userInfo;
@@ -83,6 +86,7 @@ Page({
                   userInfo: userInfo,
                   logged: true
                 })
+                console.log(userInfo)
               },
 
               fail: function () {

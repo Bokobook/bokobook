@@ -1,4 +1,4 @@
 <!--pages/components/book/book.wxml-->
-<text>
-  book
-</text>
+<view>
+  {{book.name}}
+</view>

@@ -1,1 +1,13 @@
 /* pages/login/login.wxss */
+page{
+  background: #F6F6F6;
+}
+#img {
+  border: solid black 1px;
+}
+.page {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 100%;
+  padding-top: 50%;
+}

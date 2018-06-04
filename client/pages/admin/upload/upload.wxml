@@ -1,0 +1,16 @@
+<!--pages/admin/upload/upload.wxml-->
+<view>
+  <form bindsubmit='upload'>
+    书名：<input type='text' name='name' auto-focus />
+    简介：<textarea type='text' name='intro' auto-focus></textarea>
+    数量：<input type='number' name='number'></input>
+    原价：<input type='digit' name='oldprice'></input>
+    二手价：<input type='digit' name='price'></input>
+    学校：<input type='text' name='school'></input>
+    学院：<input type='text' name='college'></input>
+    专业：<input type='text' name='discipline'></input>
+    <button bindtap='getImgPath'>上传封面</button>
+    <image src='{{tempFilePaths}}' ></image>
+    <button formType='submit'>确认</button>
+  </form>
+</view>

@@ -1,20 +1,15 @@
-// pages/login/login.js
+// pages/admin/home/home.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+  
   },
-  userlogin: function() {
+  uploadbook: function() {
     wx.navigateTo({
-      url: '../homepage/homepage',
-    })
-  },
-  toAdminLogin: function() {
-    wx.navigateTo({
-      url: '../admin/login/login'
+      url: '../upload/upload',
     })
   },
 

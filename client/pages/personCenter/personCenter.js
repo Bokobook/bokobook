@@ -1,20 +1,31 @@
-// pages/login/login.js
+// pages/personCenter/personCenter.js
+var config = require('../../config')
+var app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    sendOrder: null,
+    buyOrder: null
   },
-  userlogin: function() {
-    wx.navigateTo({
-      url: '../homepage/homepage',
-    })
-  },
-  toAdminLogin: function() {
-    wx.navigateTo({
-      url: '../admin/login/login'
+  getOrders: function() {
+    let page = this
+    let userid = app.globalData.userInfo.openid
+    wx.request({
+      url: config.service.getOders + '?userid=' + userid,
+      success: function (res) {
+        // console.log(res)
+        // 获取所属订单
+        page.setData({
+          sendOrder: res.data.data.sendOrder,
+          buyOrder: res.data.data.buyOrder
+        })
+        // console.log(page.data.sendOrder)
+        // console.log(page.data.buyOrder)
+      }
     })
   },
 
@@ -22,7 +33,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getOrders()
   },
 
   /**

@@ -6,6 +6,12 @@ const router = require('koa-router')({
 })
 const controllers = require('../controllers')
 
+const path = require('path')
+const imgFolder = path.join(path.parse(__dirname).dir, 'uploads')
+
+const multer = require('koa-multer');
+const upload = multer({ dest: imgFolder });
+
 // 从 sdk 中取出中间件
 // 这里展示如何使用 Koa 中间件完成登录态的颁发与验证
 const { auth: { authorizationMiddleware, validationMiddleware } } = require('../qcloud')
@@ -19,9 +25,17 @@ router.get('/user', validationMiddleware, controllers.user)
 // --- 图片上传 Demo --- //
 // 图片上传接口，小程序端可以直接将 url 填入 wx.uploadFile 中
 router.post('/upload', controllers.upload)
-router.post('/uploadbook', controllers.uploadbook)
-router.get('/getbooks', controllers.sendBooks)
+// router.post('/uploadbook', controllers.uploadbook)
+router.post('/uploadbook', upload.single('book'), controllers.uploadbook)
+router.get('/getbooks', controllers.sendbooks)
 
+// 取书订单
+router.post('/uploadorder1', controllers.order1)
+// 买书订单
+router.post('/uploadbuyorder', controllers.buyorder)
+router.get('/getOders', controllers.sendorders)
+
+router.get('/img', controllers.sendimg)
 // --- 信道服务接口 Demo --- //
 // GET  用来响应请求信道地址的
 router.get('/tunnel', controllers.tunnel.get)

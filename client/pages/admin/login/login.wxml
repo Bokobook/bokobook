@@ -1,0 +1,7 @@
+<!--pages/admin/login/login.wxml-->
+<view>
+  <form bindsubmit='uploadBook'>
+    输入密码：<input type='password' name="password" />
+    <button formType='submit'>确认</button>
+  </form>
+</view>

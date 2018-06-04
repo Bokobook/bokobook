@@ -1,21 +1,11 @@
-// pages/login/login.js
+// pages/admin/login/login.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-  },
-  userlogin: function() {
-    wx.navigateTo({
-      url: '../homepage/homepage',
-    })
-  },
-  toAdminLogin: function() {
-    wx.navigateTo({
-      url: '../admin/login/login'
-    })
+  
   },
 
   /**
@@ -23,6 +13,26 @@ Page({
    */
   onLoad: function (options) {
   
+  },
+  uploadBook: function (e) {
+    let password = 123;
+    if (e.detail.value.password == password) {
+      wx.navigateTo({
+        url: '../home/home',
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '密码错误',
+        success: function (res) {
+          if (res.confirm) {
+          } else {
+            wx.navigateBack()
+          }
+
+        }
+      })
+    }
   },
 
   /**

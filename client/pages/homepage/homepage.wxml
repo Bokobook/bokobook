@@ -1,10 +1,10 @@
 <!--pages/homepage/homepage.wxml-->
 <view>
-  <view bindtap='tobookdetail'>
-    <book></book>
+  <view wx:for="{{books}}" wx:key="{{index}}">
+    <book book='{{(item)}}' bindtap='tobookdetail' data-bookid='{{item.id}}'></book>
   </view>
-  <navigator url='../sell/sell'>
+  <view>
     <button bindtap="tosell">卖书</button>
-    <button>个人中心</button>
-  </navigator>
+    <button bindtap="tocenter">个人中心</button>
+  </view>
 </view>
