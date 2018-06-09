@@ -1,11 +1,32 @@
 <!--pages/bookdetail/bookdetail.wxml-->
 <view>
-{{book.name}}
-{{book.introduction}}
-{{book.price}}
-<form bindsubmit='buy'>
-  数量:<input type='number' value='0' name='number' bindinput='getprice'/>
-  价格：{{totalprice}}
-  <button formType='submit'>购买</button>
-</form>
+<image src='{{host + "/" +book.face}}' class='img'></image>
+<view>{{book.name}}</view>
+<view class='prices'>
+  <view class='price'>价格：￥{{book.price}}</view>
+  <view class='oldprice'>原价: ￥{{book.oldprice}}</view>
+</view>
+<view>
+  <view><span class='hint'>学校：</span>{{book.school}}</view>
+  <view><span class='hint'>学院：</span>{{book.college}}</view>
+  <view><span class='hint'>专业：</span>{{book.discipline}}</view>
+  <view><span class='hint'>简介：</span>{{book.intro}}</view>
+</view>
+
+  <form bindsubmit='buy'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+              <view class="weui-label">购买数量</view>
+          </view>
+          <view class="weui-cell__bd">
+              <input class="weui-input" type='number' placeholder="number" name='number' bindinput='getprice'/>
+          </view>
+      </view>
+    </view>
+    <view>价格：{{totalprice}}</view>
+    <view class="button-sp-area">
+      <button class="weui-btn" type="primary" plain="true" formType='submit'>购买</button>
+    </view>
+  </form>
 </view>

@@ -6,7 +6,7 @@ const bodyParser = require('koa-bodyparser')
 const config = require('./config')
 
 const serve = require('koa-static');
-app.use(serve(__dirname));
+app.use(serve(__dirname + '/uploads'));
 
 // 使用响应处理中间件
 app.use(response)

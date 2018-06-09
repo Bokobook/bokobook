@@ -27,6 +27,9 @@ Page({
           duration: 1000,
           mask: true
         })
+        wx.navigateTo({
+          url: '../home/home',
+        })
         console.log(res)
       }
     })

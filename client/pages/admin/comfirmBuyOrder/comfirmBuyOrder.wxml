@@ -1,0 +1,17 @@
+<!--pages/admin/comfirmBuyOrder/comfirmBuyOrder.wxml-->
+<view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">输入订单号</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" type='number' placeholder="购书订单号" bindinput='getOrderNumber'/>
+        </view>
+    </view>
+  </view>
+  <view>
+    <button bindtap='confirmOrder'>确认</button>
+  </view>
+
+</view>

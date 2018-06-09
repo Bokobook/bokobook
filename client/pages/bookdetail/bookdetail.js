@@ -5,7 +5,8 @@ var app = getApp()
 Page({
   data: {
     book: null,
-    totalprice: 0
+    totalprice: 0,
+    host: config.service.host
   },
 
   getBookId: function() {
@@ -21,12 +22,15 @@ Page({
     // 根据书籍id请求书籍
     let page = this
     wx.request({
-      url: config.service.getBookUrl + '?id=' + id,
+      url: config.service.getABookUrl + '?id=' + id,
       success: function (res) {
-        console.log('get a book')
         console.log(res.data.data)
+        let book = res.data.data.book[0]
+        console.log(book)
+        book.oldprice = book.oldprice.toFixed(2)
+        book.price = book.price.toFixed(2)
         page.setData({
-          book: res.data.data.book[0]
+          book: book
         })
       }
     })
@@ -67,6 +71,9 @@ Page({
             success: function (res) {
               console.log('uplaod book order')
               console.log(res)
+              wx.switchTab({
+                url: '../buyOrder/buyOrder',
+              })
             }
           })
         } else {

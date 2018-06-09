@@ -1,1 +1,24 @@
 /* pages/bookdetail/bookdetail.wxss */
+page {
+  /* padding-left: 10px; */
+  box-sizing: border-box;
+  padding: 10px;
+}
+.img {
+  margin-bottom: 10px;
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+.prices {
+  margin-bottom: 10px;
+}
+.price {
+  font-size: 20px;
+}
+.hint {
+  color: #bbbbbb;
+}
+.oldprice {
+  color: #888888;
+}

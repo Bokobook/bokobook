@@ -1,4 +1,11 @@
 <!--pages/components/book/book.wxml-->
-<view>
-  {{book.name}}
+<view class='book'>
+  <view class='img'>
+    <image class='image' src='{{host+"/"+book.face}}'></image>
+  </view>
+  <view class='info'>
+    <view>{{book.name}}</view>
+    <view>价格：{{price}}</view>
+    <view>原价：{{oldprice}}</view>
+  </view>
 </view>

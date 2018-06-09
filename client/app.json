@@ -1,17 +1,22 @@
 {
   "pages":[
     "pages/login/login",
+    "pages/index/index",
+    
     "pages/components/book/book",
-    "pages/homepage/homepage",
     "pages/bookdetail/bookdetail",
     "pages/sell/sell",
-    "pages/index/index",
+
+    "pages/index0/index",
     "pages/addCgi/addCgi",
-    "pages/personCenter/personCenter",
+    "pages/sellOrder/sellOrder",
+    "pages/buyOrder/buyOrder",
 
     "pages/admin/login/login",
     "pages/admin/home/home",
-    "pages/admin/upload/upload"
+    "pages/admin/upload/upload",
+    "pages/admin/comfirmSellOrder/comfirmSellOrder",
+    "pages/admin/comfirmBuyOrder/comfirmBuyOrder"
   ],
   "window":{
     "backgroundColor":"#F6F6F6",
@@ -19,5 +24,33 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "boko",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "list": [
+      {
+        "text": "买书",
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "imgs/购物商城2.png",
+        "iconPath": "imgs/购物商城.png"
+      },
+      {
+      "text": "卖书",
+      "pagePath": "pages/sell/sell",
+      "selectedIconPath": "imgs/购物商城2.png",
+      "iconPath": "imgs/购物商城.png"
+      },
+      {
+      "text": "卖书订单",
+      "pagePath": "pages/sellOrder/sellOrder",
+      "selectedIconPath": "imgs/清单2.png",
+      "iconPath": "imgs/清单.png"
+      },
+      {
+        "text": "购书订单",
+        "pagePath": "pages/buyOrder/buyOrder",
+        "selectedIconPath": "imgs/清单2.png",
+        "iconPath": "imgs/清单.png"
+      }
+    ]
   }
 }

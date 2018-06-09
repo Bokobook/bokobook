@@ -1,0 +1,40 @@
+<!--pages/sellOrder/sellOrder.wxml-->
+<view class='page'>
+
+<view wx:for="{{sendOrder}}" wx:key="{{index}}" class='sellitem'>
+  <view class="page__bd">
+    <view class="weui-form-preview">
+      <view class="weui-form-preview__hd">
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">订单号</view>
+              <view class="weui-form-preview__value_in-hd">{{item.id}}</view>
+          </view>
+      </view>
+      <view class="weui-form-preview__bd">
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">书籍数目</view>
+              <view class="weui-form-preview__value">{{item.number}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">取书方式</view>
+              <view class="weui-form-preview__value">{{item.way ? '仓库收集' : '自行送到仓库'}}</view>
+          </view>
+          <view class="weui-form-preview__item" wx:if='{{item.way}}'>
+              <view class="weui-form-preview__label">取书时间</view>
+              <view class="weui-form-preview__value">{{item.date}} {{item.time}}</view>
+          </view>
+          <view class="weui-form-preview__item" wx:if='{{item.way}}'>
+              <view class="weui-form-preview__label">取书地点</view>
+              <view class="weui-form-preview__value">{{item.place}}</view>
+          </view>
+          <view class="weui-form-preview__item" wx:if='{{item.way}}'>
+              <view class="weui-form-preview__label">联系方式</view>
+              <view class="weui-form-preview__value">{{item.phone}}</view>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+  <button bindtap='ret'>退出</button>
+</view>

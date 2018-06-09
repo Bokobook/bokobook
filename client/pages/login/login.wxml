@@ -3,6 +3,5 @@
   <view class="page__bd page__bd_spacing">
     <button bindtap='userlogin' class="weui-btn" type="primary">用户登录</button>
     <button bindtap='toAdminLogin' class="weui-btn" type="primary">管理员登录</button>
-    <image id='img' src='http://localhost:5757/weapp/uploads/40bad2af7574e7fa5470f603669c8b8a'></image>
   </view>
 </view>

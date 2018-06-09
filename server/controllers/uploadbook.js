@@ -6,14 +6,12 @@ module.exports = async function (ctx, next) {
   let body = ctx.req.body;
   let file = ctx.req.file;
   
-  // await mysql('book').insert(body)
-  // let data = await mysql('book').select('*')
-  const path = require('path')
-  let imgpath = path.join('uploads', file.filename)
-  console.log(imgpath)
+  body.face = file.filename
+  await mysql('book').insert(body)
+  let data = await mysql('book').select('*')
 
   ctx.state.data = {
     body: body,
-    file: file.filename,
+    data: data
   }
 }

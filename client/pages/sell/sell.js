@@ -7,7 +7,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bookhelp: false
+    bookhelp: false,
+    orderInfo: {
+      date: "2016-09-01",
+      time: "12:01",
+    }
+  },
+  oninput: function(e) {
+    let id = e.target.id;
+    let orderInfo = this.data.orderInfo
+    orderInfo[id] = e.detail.value
+    this.setData({
+      orderInfo: orderInfo
+    })
+  },
+  bindDateChange: function (e) {
+    this.setData({
+      date: e.detail.value
+    })
   },
   ret: function() {
     wx.navigateTo({
@@ -20,11 +37,10 @@ Page({
     })
   },
   uploadOrder: function(e) {
-    let value = e.detail.value
     let bookhelp = this.data.bookhelp
     let openid = app.globalData.userInfo.openid
-    console.log(value)
-    let orderInfo = Object.assign({}, value, {
+
+    let orderInfo = Object.assign({}, this.data.orderInfo, {
       userid: openid,
       createTime: '2018-01-11',
       way: bookhelp
@@ -37,8 +53,16 @@ Page({
       },
       data: orderInfo,
       success: function(res) {
-        console.log('uplaod book order')
+        // wx.showToast({
+        //   title: '成功',
+        //   icon: 'succes',
+        //   duration: 1000,
+        //   mask: true
+        // })
         console.log(res)
+        wx.switchTab({
+          url: '../sellOrder/sellOrder',
+        })
       }
     })
   },

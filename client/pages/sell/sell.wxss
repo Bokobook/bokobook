@@ -1,0 +1,10 @@
+.page {
+  box-sizing: border-box;
+  margin: 10px;
+}
+.hint {
+  margin-bottom: 10px;
+}
+.send {
+  margin-top: 10px;
+}

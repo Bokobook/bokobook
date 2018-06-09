@@ -5,7 +5,7 @@
 // 此处主机域名修改成腾讯云解决方案分配的域名
 var host = 'https://on6jqpw8.qcloud.la';
 // 5228ac0f924a1b936fefc555c49bc08d
-host = 'http://localhost:5757';
+// host = 'http://localhost:5757';
 
 var config = {
 
@@ -26,10 +26,13 @@ var config = {
         uploadUrl: `${host}/weapp/upload`,
         uploadBookUrl: `${host}/weapp/uploadbook`,
         getBookUrl: `${host}/weapp/getbooks`,
+        getABookUrl: `${host}/weapp/getAbook`,
         // getBookUrl: `${host}/weapp/getbook`,
         sendBookOrder: `${host}/weapp/uploadorder1`,
         sendBuyOrder: `${host}/weapp/uploadbuyorder`,
-        getOders: `${host}/weapp/getOders`
+        getOders: `${host}/weapp/getOders`,
+        confirmBuyOrder: `${host}/weapp/confirmBuyOrder`,
+        confirmSellOrder: `${host}/weapp/confirmSellOrder`
     }
 };
 

@@ -1,16 +1,86 @@
 <!--pages/admin/upload/upload.wxml-->
 <view>
   <form bindsubmit='upload'>
-    书名：<input type='text' name='name' auto-focus />
-    简介：<textarea type='text' name='intro' auto-focus></textarea>
-    数量：<input type='number' name='number'></input>
-    原价：<input type='digit' name='oldprice'></input>
-    二手价：<input type='digit' name='price'></input>
-    学校：<input type='text' name='school'></input>
-    学院：<input type='text' name='college'></input>
-    专业：<input type='text' name='discipline'></input>
-    <button bindtap='getImgPath'>上传封面</button>
-    <image src='{{tempFilePaths}}' ></image>
-    <button formType='submit'>确认</button>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">书名</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input name='name' class="weui-input" placeholder="请输入书名"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">数量</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input name='number' type='number' class="weui-input" placeholder="请输入数量"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">原价</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input name='oldprice' type='digit' class="weui-input" placeholder="请输入原价"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">二手价</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input name='price' type='digit' class="weui-input" placeholder="请输入二手价"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">学校</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input name='school' class="weui-input" placeholder="请输入学校"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">学院</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input name='college' class="weui-input" placeholder="请输入学院"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">专业</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input name='discipline' class="weui-input" placeholder="请输入专业"/>
+        </view>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">
+                <textarea name='intro' class="weui-textarea" placeholder="书籍简介" style="height: 3.3em" />
+            </view>
+        </view>
+    </view>
+
+    <view class="weui-uploader">
+      <view class="weui-uploader__hd">
+        <button class="weui-uploader__title"  bindtap='getImgPath'>上传封面</button>
+      </view>
+      <view>
+        <image class="weui-uploader__img" src='{{tempFilePaths}}' mode="aspectFill" v-if='{{tempFilePaths != null}}' />
+      </view>
+    </view>
+
+    <button form-type='submit'>确认</button>
   </form>
 </view>

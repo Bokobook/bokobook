@@ -27,7 +27,11 @@ router.get('/user', validationMiddleware, controllers.user)
 router.post('/upload', controllers.upload)
 // router.post('/uploadbook', controllers.uploadbook)
 router.post('/uploadbook', upload.single('book'), controllers.uploadbook)
-router.get('/getbooks', controllers.sendbooks)
+router.post('/getbooks', controllers.sendbooks)
+router.get('/getAbook', controllers.sendAbook)
+
+router.get('/confirmBuyOrder', controllers.confirmBuyOrder)
+router.get('/confirmSellOrder', controllers.confirmSellOrder)
 
 // 取书订单
 router.post('/uploadorder1', controllers.order1)
@@ -35,7 +39,6 @@ router.post('/uploadorder1', controllers.order1)
 router.post('/uploadbuyorder', controllers.buyorder)
 router.get('/getOders', controllers.sendorders)
 
-router.get('/img', controllers.sendimg)
 // --- 信道服务接口 Demo --- //
 // GET  用来响应请求信道地址的
 router.get('/tunnel', controllers.tunnel.get)

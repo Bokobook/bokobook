@@ -1,4 +1,6 @@
 // pages/components/book/book.js
+var config = require('../../../config')
+
 Component({
   properties: {
     // 这里定义了innerText属性，属性值可以在组件使用时指定
@@ -8,11 +10,15 @@ Component({
     }
   },
   data: {
-    // 这里是一些组件内部数据
-    someData: {}
+    host: config.service.host,
+    oldprice: null,
+    price: null
   },
   attached: function() {
-    // console.log(this.data)
+    this.setData({
+      oldprice: this.properties.book.oldprice.toFixed(2),
+      price: this.properties.book.price.toFixed(2)
+    })
   },
   methods: {
     // 这里是一个自定义方法

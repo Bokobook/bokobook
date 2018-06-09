@@ -1,0 +1,7 @@
+/* pages/personCenter/personCenter.wxss */
+.page {
+  background: #F6F6F6;
+}
+.sellitem {
+  margin-bottom: 25px;
+}

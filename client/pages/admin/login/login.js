@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    password: null
   },
 
   /**
@@ -14,9 +14,14 @@ Page({
   onLoad: function (options) {
   
   },
-  uploadBook: function (e) {
-    let password = 123;
-    if (e.detail.value.password == password) {
+  getPass: function(e) {
+    this.setData({
+      password: e.detail.value
+    })
+  },
+  uploadBook: function () {
+    let password = '123'
+    if (password == this.data.password) {
       wx.navigateTo({
         url: '../home/home',
       })
