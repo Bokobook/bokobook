@@ -25,17 +25,23 @@ router.get('/user', validationMiddleware, controllers.user)
 // --- 图片上传 Demo --- //
 // 图片上传接口，小程序端可以直接将 url 填入 wx.uploadFile 中
 router.post('/upload', controllers.upload)
+
 // router.post('/uploadbook', controllers.uploadbook)
+// 上传书目
 router.post('/uploadbook', upload.single('book'), controllers.uploadbook)
+// 获取书籍
 router.post('/getbooks', controllers.sendbooks)
+// 获取一本书籍
 router.get('/getAbook', controllers.sendAbook)
 
+// 确认购书订单
 router.get('/confirmBuyOrder', controllers.confirmBuyOrder)
+// 确认卖书订单
 router.get('/confirmSellOrder', controllers.confirmSellOrder)
 
-// 取书订单
+// 生成卖书订单
 router.post('/uploadorder1', controllers.order1)
-// 买书订单
+// 生成购书订单
 router.post('/uploadbuyorder', controllers.buyorder)
 router.get('/getOders', controllers.sendorders)
 
